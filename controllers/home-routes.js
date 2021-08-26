@@ -48,7 +48,7 @@ router.get('/login', (req, res) => {
       return;
     }
   
-    res.render('signup');
+    res.render('login');
   });
 
   router.get('/signup', (req, res) => {
@@ -57,7 +57,7 @@ router.get('/login', (req, res) => {
       return;
     }
   
-    res.render('login');
+    res.render('signup');
   });
 // get single post
 router.get('/post/:id', (req, res) => {
