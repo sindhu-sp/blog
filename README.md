@@ -50,7 +50,9 @@ As a developer who writes about tech, the user wants a CMS-style blog site, so t
 <img src="./images/delete_post.png" alt="refresh page" height = 300 width= 300 />
 
 ## Deployed Site
-
+ https://sindhu-techblog.herokuapp.com/
+ 
+ https://github.com/sindhu-sp/blog
 
 ## Technologies Used:
 - MySQL2
