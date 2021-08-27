@@ -5,7 +5,7 @@
     <div>
       <label for="post-title">post title</label>
       <input class="input" name="post-title" type="text" value="{{post.title}}"/>
-      {{!-- <span>({{format_post post.post_comments}})</span> --}}
+      
     </div>
     <div>
       <label for="post-comments">post comments</label>
@@ -21,15 +21,6 @@
   </form>
 </article>
 
-{{!-- <form class="comment-form">
-  <div>
-    <textarea name="comment-body"></textarea>
-  </div>
-
-  <div>
-    <button type="submit">add comment</button>
-  </div>
-</form> --}}
 
 {{> comments post.comments}}
 

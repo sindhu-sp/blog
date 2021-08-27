@@ -1,25 +1,8 @@
-{{!-- <section>
-  <h2>Create New Post</h2>
-
-  <form class="new-post-form">
-    <div>
-      <label for="post-title">Title</label>
-      <input type="text" id="post-title" name="post-title" />
-    </div>
-    <div>
-      <label for="post-comments">Post</label>
-      <input id="post-comments" name="post-comments" />
-    </div>
-    <button type="submit" class="btn">Create</button>
-  </form>
-</section> --}}
-
 <div class="mb-4 pt-3">
   <a href="/dashboard/create/"><button id="create-post" class="btn is-primary is-pulled-right">Create Post</button></a>
 <h2 class="title pb-4">dashboard: post</h2>
 {{#if posts.length}}
 </div>
-  {{!-- <h2>Your Posts</h2> --}}
   <ol>
     {{#each posts as |post|}}
     <li>

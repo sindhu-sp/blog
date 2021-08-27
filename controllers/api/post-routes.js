@@ -14,6 +14,7 @@ router.get('/', (req, res) => {
       'created_at',
       
     ],
+    order: ['created_at', 'DESC'],
     include: [
       {
         model: Comment,
@@ -45,8 +46,7 @@ router.get('/:id', (req, res) => {
       'id',
       'post_comments',
       'title',
-      'created_at',
-      [sequelize.literal('(SELECT COUNT(*) FROM vote WHERE post.id = vote.post_id)'), 'vote_count']
+      'created_at'
     ],
     include: [
         {
@@ -118,7 +118,7 @@ router.put('/:id', withAuth, (req, res) => {
 });
 
 router.delete('/:id', withAuth, (req, res) => {
-  console.log('id', req.params.id);
+  // console.log('id', req.params.id);
   Post.destroy({
     where: {
       id: req.params.id

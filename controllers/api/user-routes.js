@@ -1,5 +1,6 @@
 const router = require('express').Router();
 const { User, Post, Comment } = require('../../models');
+const withAuth = require('../../utils/auth');
 
 // get all users
 router.get('/', (req, res) => {
@@ -32,10 +33,10 @@ router.get('/:id', (req, res) => {
           attributes: ['title']
         }
       },
-      {
-        model: Post,
-        attributes: ['title'],
-      }
+      // {
+      //   model: Post,
+      //   attributes: ['title'],
+      // }
     ]
   })
     .then(dbUserData => {
@@ -67,10 +68,10 @@ router.post('/', (req, res) => {
         res.json(dbUserData);
       });
     })
-    .catch(err => {
-      console.log(err);
-      res.status(500).json(err);
-    });
+    // .catch(err => {
+    //   console.log(err);
+    //   res.status(500).json(err);
+    // });
 });
 
 router.post('/login', (req, res) => {
@@ -136,7 +137,7 @@ router.put('/:id', (req, res) => {
     });
 });
 
-router.delete('/:id', (req, res) => {
+router.delete('/:id', withAuth, (req, res) => {
   User.destroy({
     where: {
       id: req.params.id

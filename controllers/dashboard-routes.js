@@ -5,7 +5,7 @@ const withAuth = require('../utils/auth');
 
 // get all posts for dashboard
 router.get('/', withAuth, (req, res) => {
-  console.log(req.session);
+  // console.log(req.session);
   console.log('======================');
   Post.findAll({
     where: {
@@ -45,6 +45,7 @@ router.get('/', withAuth, (req, res) => {
 
 router.get('/edit/:id', withAuth, (req, res) => {
   Post.findOne({
+    where: { id: req.params.id},
     attributes: [
       'id',
       'post_comments',
@@ -68,24 +69,25 @@ router.get('/edit/:id', withAuth, (req, res) => {
     ]
   })
     .then(dbPostData => {
-      if (dbPostData) {
+      if (!dbPostData) {
+        res.status(404).json({ message: 'No post found with this id' });
+        return;
+      }
         const post = dbPostData.get({ plain: true });
-        
         res.render('edit-post', {
           post,
           loggedIn: true
         });
-      } else {
-        res.status(404).end();
-      }
     })
+      
     .catch(err => {
+      console.log(err);
       res.status(500).json(err);
     });
 });
 
 router.get('/create', withAuth, (req, res) => {
-    console.log(req.session);
+    // console.log(req.session);
     console.log('======================');
     Post.findAll({
       where: {
@@ -115,7 +117,7 @@ router.get('/create', withAuth, (req, res) => {
     })
       .then(dbPostData => {
         const posts = dbPostData.map(post => post.get({ plain: true }));
-        res.render('dashboard', { posts, loggedIn: true });
+        res.render('create-post', { posts, loggedIn: true });
       })
       .catch(err => {
         console.log(err);
