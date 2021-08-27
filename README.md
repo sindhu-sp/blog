@@ -40,14 +40,14 @@ As a developer who writes about tech, the user wants a CMS-style blog site, so t
 
 ## blog Demo
 
-<img src="./images/homepage_before_login.png" alt="refresh page" height = 300 width= 300 />
-<img src="./images/signup.png" alt="refresh page" height = 300 width= 300 />
-<img src="./images/loggein.png" alt="refresh page" height = 300 width= 300 />
-<img src="./images/create_post.png" alt="refresh page" height = 300 width= 300 />
-<img src="./images/added_post.png" alt="refresh page" height = 300 width= 300 />
-<img src="./images/new_post_dashboard.png" alt="refresh page" height = 300 width= 300 />
-<img src="./images/new_comment.png" alt="refresh page" height = 300 width= 300 />
-<img src="./images/delete_post.png" alt="refresh page" height = 300 width= 300 />
+<img src="./images/homepage_before_login.png" alt="refresh page" height = 300 width= 500 />
+<img src="./images/signup.png" alt="refresh page" height = 300 width= 500 />
+<img src="./images/loggedin.png" alt="refresh page" height = 300 width= 500 />
+<img src="./images/create_post.png" alt="refresh page" height = 300 width= 500 />
+<img src="./images/added_post.png" alt="refresh page" height = 300 width= 500 />
+<img src="./images/new_post_dashboard.png" alt="refresh page" height = 300 width= 500 />
+<img src="./images/new_comment.png" alt="refresh page" height = 300 width= 500 />
+<img src="./images/delete_post.png" alt="refresh page" height = 300 width= 500 />
 
 ## Deployed Site
  https://sindhu-techblog.herokuapp.com/
